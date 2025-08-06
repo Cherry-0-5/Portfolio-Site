@@ -917,7 +917,7 @@
 
         /* General section padding and background */
         .s-contact {
-            padding: 8rem 0; /* Adjust as needed */
+            padding: 4rem 0; /* Adjusted padding to reduce space at top and bottom */
             background-color: #1a1a1a; /* Dark background to match Luther theme */
             color: #f5f5f5; /* Light text for contrast */
             font-family: var(--font-1);
@@ -1017,10 +1017,15 @@
             text-decoration: none;
             line-height: 1.8;
             transition: color 0.3s ease;
-            display: block; /* Make links block level for better spacing */
+            /* Removed display: block; so text and link stay on same line */
         }
         .s-contact .contact-links a:hover {
             color: #3b82f6; /* Darker blue on hover */
+        }
+        /* Added a class for the labels to ensure they are block-level */
+        .s-contact .contact-links span {
+            display: block;
+            margin-bottom: 0.5rem; /* Space between lines */
         }
 
         /* Social links styling (kept for reference, though section removed) */
@@ -1174,17 +1179,19 @@
         <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
             <h3 class="text-pretitle">Reach me at</h3>
             <p class="contact-links">
-                Primary Email: <a href="mailto:rsk.181297@gmail.com" class="mailtoui">rsk.181297@gmail.com</a> <br>
-                Primary Number: <a href="tel:+919842436890">+919842436890</a> <br>
-                Alternate Number: <a href="tel:+916369751844">+916369751844</a>
+                <span>Primary Email: <a href="mailto:rsk.181297@gmail.com" class="mailtoui">rsk.181297@gmail.com</a></span>
+                <span>Primary Number: <a href="tel:+919842436890">+91-9842436890</a></span>
+                <span>Alternate Number: <a href="tel:+916369751844">+91-6369751844</a></span>
             </p>
         </div>
-        
+    </div> <!-- end contact-bottom -->
+
+    <!-- New row for the "Say Hello" button -->
+    <div class="row justify-content-center mt-8">
         <div class="column lg-4 md-12 contact-block">
-            <!-- This button from the original theme is a mailto link, not a form -->
             <a href="mailto:rsk.181297@gmail.com" class="mailtoui btn btn--medium u-fullwidth contact-btn">Say Hello</a>
         </div>
-    </div> <!-- end contact-bottom -->
+    </div>
 
 </section> <!-- /Contact Section -->
 
