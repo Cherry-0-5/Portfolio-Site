@@ -897,49 +897,280 @@
 
     </section><!-- /Testimonials Section -->
 
-    <!-- Contact Section -->
-            <section id="contact" class="s-contact target-section">
+<!-- Contact Section -->
+<section id="contact" class="s-contact target-section">
 
-                <div class="row contact-top">
-                    <div class="column lg-12">
-                        <h2 class="text-pretitle">
-                            Get In Touch
-                        </h2>
+    <!-- Inline styles for this section only (simulated from Luther theme) -->
+    <style>
+        /* CSS Variables (simulated) - these would ideally come from a global styles.css */
+        :root {
+            --color-gray-18: #2a2a2a; /* Dark gray for modal head */
+            --color-gray-11: #333333; /* Slightly lighter dark gray for modal body */
+            --text-color: #f5f5f5; /* Light text color */
+            --color-1-dark: #1a1a1a; /* Dark background for hover */
+            --font-1: 'Inter', sans-serif; /* Using Inter as per your project's general font */
+            --font-mono: 'Space Mono', monospace; /* Example mono font for code */
+            --vspace-0_5: 0.5rem;
+            --vspace-1: 1rem;
+            --color-body: #121212; /* Dark background for the overall page/modal */
+        }
 
-                        <p class="h1">
-                            I love to hear from you.
-                            Whether you have a question or just 
-                            want to chat about design, tech & art — shoot me a message.
-                        </p>
-                    </div>
-                </div> <!-- end contact-top -->
+        /* General section padding and background */
+        .s-contact {
+            padding: 8rem 0; /* Adjust as needed */
+            background-color: #1a1a1a; /* Dark background to match Luther theme */
+            color: #f5f5f5; /* Light text for contrast */
+            font-family: var(--font-1);
+        }
 
-                <div class="row contact-bottom">
-                    <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
-                        <h3 class="text-pretitle">Reach me at</h3>
-                        <p class="contact-links">
-                            <a href="mailto:sayhello@luther.com" class="mailtoui">sayhello@luther.com</a> <br>
-                            <a href="tel:+1975432345">+197 543 2345</a>
-                        </p>
-                    </div>
-                    <div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
-                        <h3 class="text-pretitle">Social</h3>
-                        <ul class="contact-social">
-                            <li><a href="#0">Behance</a></li>
-                            <li><a href="#0">Dribble</a></li>
-                            <li><a href="#0">Twitter</a></li>
-                            <li><a href="#0">Instagram</a></li>
-                            <li><a href="#0">Github</a></li>
-                        </ul>
-                    </div>
-                    <div class="column lg-4 md-12 contact-block">
-                        <a href="mailto:sayhello@luther.com" class="mailtoui btn btn--medium u-fullwidth contact-btn">Say Hello.</a>
-                    </div>
-                </div> <!-- end contact-bottom -->
+        /* Grid row styling (common in frameworks like Bootstrap/Skeleton) */
+        .s-contact .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -15px; /* Adjust based on column padding */
+            margin-right: -15px; /* Adjust based on column padding */
+            justify-content: center; /* Center content in rows */
+        }
 
-            </section> <!-- /Contact Section -->
+        /* Column styling (common in frameworks) */
+        .s-contact .column {
+            padding-left: 15px; /* Adjust based on row margin */
+            padding-right: 15px; /* Adjust based on row margin */
+            box-sizing: border-box; /* Include padding in width */
+        }
+        .s-contact .column.lg-12 { flex-basis: 100%; max-width: 100%; }
+        .s-contact .column.lg-3 { flex-basis: 25%; max-width: 25%; }
+        .s-contact .column.lg-4 { flex-basis: 33.3333%; max-width: 33.3333%; }
+        
+        /* Media queries for responsiveness */
+        @media (max-width: 991px) { /* md breakpoint */
+            .s-contact .column.md-5 { flex-basis: 41.6667%; max-width: 41.6667%; }
+            .s-contact .column.md-12 { flex-basis: 100%; max-width: 100%; }
+        }
+        @media (max-width: 767px) { /* tab breakpoint */
+            .s-contact .column.tab-6 { flex-basis: 50%; max-width: 50%; }
+        }
+        @media (max-width: 550px) { /* stack-on-550 breakpoint */
+            .s-contact .column.stack-on-550 { flex-basis: 100%; max-width: 100%; }
+        }
 
-        </main> <!-- end s-content -->
+
+        /* Top section text styling */
+        .s-contact .contact-top {
+            margin-bottom: 4rem; /* Space below the top text */
+            text-align: center;
+            max-width: 800px; /* Constrain width for readability */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .s-contact .text-pretitle {
+            font-size: 0.875rem; /* Small text */
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #6b7280; /* Gray color */
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .s-contact .h1 {
+            font-size: 2.5rem; /* Large heading font size */
+            line-height: 1.2;
+            font-weight: 700; /* Bold */
+            color: #f5f5f5; /* Light text color */
+            margin-bottom: 0;
+        }
+
+        /* Bottom section layout and blocks */
+        .s-contact .contact-bottom {
+            margin-top: 2rem; /* Space above the bottom blocks */
+            justify-content: center; /* Center blocks */
+            gap: 2rem; /* Gap between columns */
+        }
+        .s-contact .contact-block {
+            margin-bottom: 2rem; /* Space between blocks on small screens */
+            padding: 2rem;
+            background-color: #2a2a2a; /* Darker background for blocks */
+            border-radius: 8px; /* Slightly rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            text-align: center; /* Center content within blocks */
+        }
+        .s-contact .contact-block .text-pretitle {
+            color: #9ca3af; /* Lighter gray for block pretitle */
+            margin-bottom: 1rem;
+        }
+
+        /* Contact links styling */
+        .s-contact .contact-links a {
+            color: #60a5fa; /* Lighter blue link color */
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+            display: block; /* Make links block level for better spacing */
+        }
+        .s-contact .contact-links a:hover {
+            color: #3b82f6; /* Darker blue on hover */
+        }
+
+        /* Social links styling */
+        .s-contact .contact-social {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Arrange social links horizontally */
+            justify-content: center; /* Center social links */
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            gap: 1rem; /* Space between social links */
+        }
+        .s-contact .contact-social li {
+            margin-bottom: 0; /* Remove default list item margin */
+        }
+        .s-contact .contact-social a {
+            color: #f5f5f5; /* Light text for social links */
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem; /* Add padding to make clickable area larger */
+            border: 1px solid #4a4a4a; /* Subtle border */
+            border-radius: 4px;
+        }
+        .s-contact .contact-social a:hover {
+            color: #60a5fa; /* Lighter blue on hover */
+            border-color: #60a5fa;
+        }
+
+        /* Button styling */
+        .s-contact .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-transform: uppercase; /* Match Luther theme style */
+            letter-spacing: 0.05em; /* Match Luther theme style */
+        }
+        .s-contact .btn--medium {
+            font-size: 1rem;
+            padding: 1.2rem 2.5rem; /* Larger padding for medium button */
+        }
+        .s-contact .u-fullwidth {
+            width: 100%;
+        }
+        .s-contact .contact-btn {
+            background-color: #60a5fa; /* Blue button background */
+            color: #1a1a1a; /* Dark text for contrast */
+            border-color: #60a5fa;
+        }
+        .s-contact .contact-btn:hover {
+            background-color: #3b82f6; /* Darker blue on hover */
+            border-color: #3b82f6;
+            color: #f5f5f5; /* White text on hover */
+        }
+
+        /* Form styling (removed from HTML, keeping CSS for reference if needed later) */
+        .s-contact .php-email-form {
+            background-color: #2a2a2a; /* Same as contact-block background */
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .s-contact .form-control,
+        .s-contact textarea.form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            margin-bottom: 1.5rem;
+            background-color: #3a3a3a; /* Darker input background */
+            border: 1px solid #555; /* Subtle border */
+            border-radius: 4px;
+            color: #f5f5f5; /* Light text color for input */
+            font-size: 1rem;
+            box-sizing: border-box; /* Include padding and border in width */
+        }
+        .s-contact .form-control::placeholder,
+        .s-contact textarea.form-control::placeholder {
+            color: #999; /* Placeholder text color */
+            opacity: 1; /* Ensure placeholder is visible */
+        }
+        .s-contact .form-control:focus,
+        .s-contact textarea.form-control:focus {
+            outline: none;
+            border-color: #60a5fa; /* Highlight on focus */
+            box-shadow: 0 0 0 0.15rem rgba(96, 165, 250, 0.25); /* Subtle focus ring */
+        }
+        .s-contact textarea.form-control {
+            min-height: 120px; /* Minimum height for textarea */
+            resize: vertical; /* Allow vertical resizing */
+        }
+        .s-contact .php-email-form button[type="submit"] {
+            background-color: #60a5fa;
+            color: #1a1a1a;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .s-contact .php-email-form button[type="submit"]:hover {
+            background-color: #3b82f6;
+            color: #f5f5f5;
+        }
+        .s-contact .loading,
+        .s-contact .error-message,
+        .s-contact .sent-message {
+            display: none; /* Hidden by default, controlled by JS */
+            text-align: center;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        .s-contact .loading {
+            color: #60a5fa;
+            background: #e0f2fe;
+        }
+        .s-contact .error-message {
+            color: #ef4444;
+            background: #fee2e2;
+        }
+        .s-contact .sent-message {
+            color: #22c55e;
+            background: #dcfce7;
+        }
+    </style>
+
+    <div class="row contact-top">
+        <div class="column lg-12">
+            <h1 class="text-pretitle">
+                Let's connect
+            </h1>
+
+            <p class="h3">
+                I'm available for recruitment inquiries and exciting career opportunities.
+            </p>
+        </div>
+    </div> <!-- end contact-top -->
+
+    <div class="row contact-bottom">
+        <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
+            <h3 class="text-pretitle">Reach me at</h3>
+            <p class="contact-links">
+                <a href="mailto:your_email@example.com" class="mailtoui">your_email@example.com</a> <br>
+                <a href="tel:+1234567890">+123 456 7890</a>
+            </p>
+        </div>
+        
+        <div class="column lg-4 md-12 contact-block">
+            <!-- This button from the original theme is a mailto link, not a form -->
+            <a href="mailto:your_email@example.com" class="mailtoui btn btn--medium u-fullwidth contact-btn">Say Hello.</a>
+        </div>
+    </div> <!-- end contact-bottom -->
+
+</section> <!-- /Contact Section -->
 
   <footer id="footer" class="footer position-relative light-background">
     <div class="container">
