@@ -904,15 +904,15 @@
     <style>
         /* CSS Variables (simulated) - these would ideally come from a global styles.css */
         :root {
-            --color-gray-18: #2a2a2a; /* Dark gray for modal head */
-            --color-gray-11: #333333; /* Slightly lighter dark gray for modal body */
+            --color-gray-18: #1a1a1a; /* Dark gray for modal head - CHANGED TO MATCH CONTACT SECTION */
+            --color-gray-11: #1a1a1a; /* Slightly lighter dark gray for modal body - CHANGED TO MATCH CONTACT SECTION */
             --text-color: #f5f5f5; /* Light text color */
             --color-1-dark: #1a1a1a; /* Dark background for hover */
             --font-1: 'Inter', sans-serif; /* Using Inter as per your project's general font */
             --font-mono: 'Space Mono', monospace; /* Example mono font for code */
             --vspace-0_5: 0.5rem;
             --vspace-1: 1rem;
-            --color-body: #121212; /* Dark background for the overall page/modal */
+            --color-body: #121212; /* Dark background for the overall page/modal overlay */
         }
 
         /* General section padding and background */
@@ -935,7 +935,7 @@
         /* Column styling (common in frameworks) */
         .s-contact .column {
             padding-left: 15px; /* Adjust based on row margin */
-            padding-right: 15px; /* Adjust based on row margin */
+            padding-right: 15px; /* Adjust based on column padding */
             box-sizing: border-box; /* Include padding in width */
         }
         .s-contact .column.lg-12 { flex-basis: 100%; max-width: 100%; }
@@ -971,12 +971,22 @@
             margin-bottom: 0.5rem;
             font-weight: 600;
         }
+        /* Changed color for the "Let's connect" heading */
+        .s-contact .contact-top .text-pretitle { /* Targeting specifically the h1 with text-pretitle */
+            color: #60a5fa; /* Lighter blue color */
+        }
         .s-contact .h1 {
             font-size: 2.5rem; /* Large heading font size */
             line-height: 1.2;
             font-weight: 700; /* Bold */
             color: #f5f5f5; /* Light text color */
             margin-bottom: 0;
+        }
+        /* Ensure the paragraph with h3 class is also light text */
+        .s-contact .h3 {
+            font-size: 1.5rem; /* Adjust as needed */
+            color: #f5f5f5;
+            margin-top: 0.5rem;
         }
 
         /* Bottom section layout and blocks */
@@ -987,20 +997,23 @@
         }
         .s-contact .contact-block {
             margin-bottom: 2rem; /* Space between blocks on small screens */
-            padding: 2rem;
-            background-color: #2a2a2a; /* Darker background for blocks */
-            border-radius: 8px; /* Slightly rounded corners */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            /* Removed background, border-radius, box-shadow, and padding for transparent look */
+            padding: 0; /* Remove padding */
+            background-color: transparent; /* Make background transparent */
+            border-radius: 0; /* Remove border radius */
+            box-shadow: none; /* Remove box shadow */
             text-align: center; /* Center content within blocks */
         }
+        /* Changed color for "Reach me at" heading */
         .s-contact .contact-block .text-pretitle {
-            color: #9ca3af; /* Lighter gray for block pretitle */
+            color: #60a5fa; /* Lighter blue for "Reach me at" */
             margin-bottom: 1rem;
         }
 
         /* Contact links styling */
+        /* Changed color for email and phone links to dull white */
         .s-contact .contact-links a {
-            color: #60a5fa; /* Lighter blue link color */
+            color: #e0e0e0; /* Dull white color */
             text-decoration: none;
             line-height: 1.8;
             transition: color 0.3s ease;
@@ -1010,7 +1023,7 @@
             color: #3b82f6; /* Darker blue on hover */
         }
 
-        /* Social links styling */
+        /* Social links styling (kept for reference, though section removed) */
         .s-contact .contact-social {
             list-style: none;
             padding: 0;
@@ -1058,14 +1071,16 @@
         .s-contact .u-fullwidth {
             width: 100%;
         }
+        /* Changed "Say Hello" button color to white and text to dark */
         .s-contact .contact-btn {
-            background-color: #60a5fa; /* Blue button background */
+            background-color: #ffffff; /* White button background */
             color: #1a1a1a; /* Dark text for contrast */
-            border-color: #60a5fa;
+            border-color: #ffffff; /* White border */
         }
+        /* Changed "Say Hello" button hover color to blue and text to white */
         .s-contact .contact-btn:hover {
-            background-color: #3b82f6; /* Darker blue on hover */
-            border-color: #3b82f6;
+            background-color: #60a5fa; /* Blue on hover (matching others) */
+            border-color: #60a5fa; /* Blue border on hover (matching others) */
             color: #f5f5f5; /* White text on hover */
         }
 
@@ -1159,14 +1174,15 @@
         <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
             <h3 class="text-pretitle">Reach me at</h3>
             <p class="contact-links">
-                <a href="mailto:your_email@example.com" class="mailtoui">your_email@example.com</a> <br>
-                <a href="tel:+1234567890">+123 456 7890</a>
+                Primary Email: <a href="mailto:rsk.181297@gmail.com" class="mailtoui">rsk.181297@gmail.com</a> <br>
+                Primary Number: <a href="tel:+919842436890">+919842436890</a> <br>
+                Alternate Number: <a href="tel:+916369751844">+916369751844</a>
             </p>
         </div>
         
         <div class="column lg-4 md-12 contact-block">
             <!-- This button from the original theme is a mailto link, not a form -->
-            <a href="mailto:your_email@example.com" class="mailtoui btn btn--medium u-fullwidth contact-btn">Say Hello.</a>
+            <a href="mailto:rsk.181297@gmail.com" class="mailtoui btn btn--medium u-fullwidth contact-btn">Say Hello</a>
         </div>
     </div> <!-- end contact-bottom -->
 
