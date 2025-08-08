@@ -24,8 +24,10 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/glowing-button.css" rel="stylesheet"> <!-- Glowing button -->
 </head>
 
 <body class="index-page">
@@ -1171,7 +1173,22 @@
             <a href="mailto:rsk.181297@gmail.com" class="mailtoui btn btn--medium block max-w-xs md:max-w-md mx-auto rounded-full contact-btn"><i class="bi bi-envelope" mr-2"></i> Mail Me</a>
         </div>
     </div> -->
+
 	<div class="row justify-content-center mt-8">
+        <div class="column lg-12 md-12 contact-block flex justify-center">
+            <button id="mailMeButton" class="glowy-button">
+                <div class="icon-wrapper">
+                    <!-- Email Icon SVG (replace with your desired SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M2.003 5.884L10 9.882l-7.997 3.998V5.884zM22 4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v.001L12 11.21zM22 18a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-.001L12 12.79l-7.999-3.998-2.001 1.001 10 5zm0-2V8l-7.997 3.998L22 16z"/>
+                    </svg>
+                </div>
+                <span>Mail Me</span>
+            </button>
+        </div>
+    </div>
+	
+	<!-- <div class="row justify-content-center mt-8">
     	<div class="column lg-4 md-12 contact-block">
         	<a href="mailto:rsk.181297@gmail.com" 
            		class="mailtoui flex items-center justify-center px-6 py-3 
@@ -1183,7 +1200,7 @@
             	<i class="bi bi-envelope mr-2"></i> Mail Me
         	</a>
     	</div>
-	</div>
+	</div> -->
 
 </section> <!-- /Contact Section -->
 
@@ -1229,6 +1246,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script defer src="assets/js/glowing-button.js"></script> <!-- Glowing button.js -->
 
 </body>
 
